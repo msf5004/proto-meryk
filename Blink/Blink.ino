@@ -1,5 +1,5 @@
 /*
-  Blink
+  Blink - heavily modified
   Turns on an LED on for one second, then off for one second, repeatedly.
   Most Arduinos have an on-board LED you can control. On the Uno and
   Leonardo, it is attached to digital pin 13. If you're unsure what
@@ -8,6 +8,8 @@
   This example code is in the public domain.
   modified 8 May 2014
   by Scott Fitzgerald
+  
+  added - blink method for easier on/off blinking, as well as fancy duty cycling.
  */
 
 

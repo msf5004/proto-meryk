@@ -57,7 +57,7 @@ void loop() {
   for (delayValue = minDelay; delayValue < maxDelay; delayValue += incDelay)
   {  
     int nRepeat = timePerState / delayValue;
-    for (int repeatCtr = 0; repeatCtr < nRepeat; repeatCtr++)
+    for (repeatCtr = 0; repeatCtr < nRepeat; repeatCtr++)
     {
       blink(LED1, delayValue, delayValue);
     }
@@ -68,7 +68,7 @@ void loop() {
   for (delayValue = maxDelay; delayValue > minDelay; delayValue -= incDelay)
   {  
     int nRepeat = timePerState / delayValue;
-    for (int repeatCtr = 0; repeatCtr < nRepeat; repeatCtr++)
+    for (repeatCtr = 0; repeatCtr < nRepeat; repeatCtr++)
     {
       blink(LED1, delayValue);
     }

@@ -35,12 +35,12 @@ void blink(int pin, int timeOnOff) {
 
 // the loop function runs over and over again forever
 void loop() {
-  int minDelay = 1;
-  int maxDelay = 250;
-  int incDelay = 25;
+  int minDelay = 50;
+  int maxDelay = 1000;
+  int incDelay = 250;
   int delayValue = 0;
   int LED1 = 13; //LED1 pin
-  int timePerState = 250;
+  int timePerState = 500;
     
   // countup delay
   for (delayValue = minDelay; delayValue < maxDelay; delayValue += incDelay)

@@ -22,28 +22,38 @@ void setup() {
 
 // the loop function runs over and over again forever
 void loop() {
-  int minDelay = 1;
-  int maxDelay = 50;
+  int minDelay = 10;
+  int maxDelay = 100;
+  int timePerState = 100;
   int incDelay = 1;
   int delayValue = 0;
-  
+  int nRepeats = 0;
   
   // countup delay
   for (delayValue = minDelay; delayValue < maxDelay; delayValue += incDelay)
-  {  
-    digitalWrite(13, HIGH);   // turn the LED on (HIGH is the voltage level)
-    delay(delayValue);        // wait for some time
-    digitalWrite(13, LOW);    // turn the LED off by making the voltage LOW
-    delay(delayValue);        // wait for some time
+  {
+
+    int nRepeats = timePerState / delayValue;
+    for (int ctr = 0; ctr < nRepeats; ctr++)
+    {
+      digitalWrite(13, HIGH);   // turn the LED on (HIGH is the voltage level)
+      delay(delayValue);        // wait for some time
+      digitalWrite(13, LOW);    // turn the LED off by making the voltage LOW
+      delay(delayValue);        // wait for some time
+    }
   }
   
   
   // countdown delay
   for (delayValue = maxDelay; delayValue > minDelay; delayValue -= incDelay)
   {  
-    digitalWrite(13, HIGH);   // turn the LED on (HIGH is the voltage level)
-    delay(delayValue);        // wait for some time
-    digitalWrite(13, LOW);    // turn the LED off by making the voltage LOW
-    delay(delayValue);        // wait for some time
+    int nRepeats = timePerState / delayValue;
+    for (int ctr = 0; ctr < nRepeats; ctr++)
+    {
+      digitalWrite(13, HIGH);   // turn the LED on (HIGH is the voltage level)
+      delay(delayValue);        // wait for some time
+      digitalWrite(13, LOW);    // turn the LED off by making the voltage LOW
+      delay(delayValue);        // wait for some time
+    }
   }
 }

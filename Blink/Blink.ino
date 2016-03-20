@@ -1,5 +1,5 @@
 /*
-  Blink - heavily modified
+  Blink - REALLY heavily modified
   Turns on an LED on for one second, then off for one second, repeatedly.
   Most Arduinos have an on-board LED you can control. On the Uno and
   Leonardo, it is attached to digital pin 13. If you're unsure what

@@ -40,17 +40,26 @@ void loop() {
   int incDelay = 25;
   int delayValue = 0;
   int LED1 = 13; //LED1 pin
+  int timePerState = 250;
     
   // countup delay
   for (delayValue = minDelay; delayValue < maxDelay; delayValue += incDelay)
   {  
-    blink(LED1, delayValue, delayValue);
+    int nRepeat = timePerState / delayValue;
+    for (repeatCtr = 0; repeatCtr < nRepeat; repeatCtr++)
+    {
+      blink(LED1, delayValue, delayValue);
+    }
   }
   
   
   // countdown delay
   for (delayValue = maxDelay; delayValue > minDelay; delayValue -= incDelay)
   {  
-    blink(LED1, delayValue);
+    int nRepeat = timePerState / delayValue;
+    for (repeatCtr = 0; repeatCtr < nRepeat; repeatCtr++)
+    {
+      blink(LED1, delayValue);
+    }
   }
 }

@@ -1,14 +1,11 @@
 /*
   Blink
   Turns on an LED on for one second, then off for one second, repeatedly.
-
   Most Arduinos have an on-board LED you can control. On the Uno and
   Leonardo, it is attached to digital pin 13. If you're unsure what
   pin the on-board LED is connected to on your Arduino model, check
   the documentation at http://arduino.cc
-
   This example code is in the public domain.
-
   modified 8 May 2014
   by Scott Fitzgerald
  */
@@ -20,30 +17,40 @@ void setup() {
   pinMode(13, OUTPUT);
 }
 
+void blink(int pin, int timeOn, int timeOff) {
+  //sets pin high for timeOn, then low, and blocks for timeOff (all in ms)
+  digitalWrite(pin, HIGH);
+  delay(timeOn);
+  digitalWrite(pin, LOW);
+  delay(timeOff);
+} //end blink
+
+void blink(int pin, int timeOnOff) {
+  //sets pin high for timeOn, then low, and blocks for timeOff (all in ms)
+  digitalWrite(pin, HIGH);
+  delay(timeOnOff);
+  digitalWrite(pin, LOW);
+  delay(timeOnOff);
+} //end blink
+
 // the loop function runs over and over again forever
 void loop() {
   int minDelay = 1;
-  int maxDelay = 50;
-  int incDelay = 1;
+  int maxDelay = 250;
+  int incDelay = 25;
   int delayValue = 0;
-  
-  
+  int LED1 = 13; //LED1 pin
+    
   // countup delay
   for (delayValue = minDelay; delayValue < maxDelay; delayValue += incDelay)
   {  
-    digitalWrite(13, HIGH);   // turn the LED on (HIGH is the voltage level)
-    delay(delayValue);        // wait for some time
-    digitalWrite(13, LOW);    // turn the LED off by making the voltage LOW
-    delay(delayValue);        // wait for some time
+    blink(LED1, delayValue, delayValue);
   }
   
   
   // countdown delay
   for (delayValue = maxDelay; delayValue > minDelay; delayValue -= incDelay)
   {  
-    digitalWrite(13, HIGH);   // turn the LED on (HIGH is the voltage level)
-    delay(delayValue);        // wait for some time
-    digitalWrite(13, LOW);    // turn the LED off by making the voltage LOW
-    delay(delayValue);        // wait for some time
+    blink(LED1, delayValue);
   }
 }

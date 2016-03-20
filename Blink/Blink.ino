@@ -37,8 +37,8 @@ void blink(int pin, int timeOnOff) {
 void loop() {
   int minDelay = 10;
   int maxDelay = 50;
-  int incDelay = 5;
-  int timePerState = 100;
+  int incDelay = 1;
+  int timePerState = 50;
   
   int delayValue = 0;
   int LED1 = 13; //LED1 pin
